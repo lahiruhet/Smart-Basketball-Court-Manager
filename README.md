@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is an IoT solution for automating the lighting system of a high-traffic basketball court facility. Developed for a popular basketball hub in Colombo, Sri Lanka ([CLC Basketball Court](https://g.co/kgs/cJUwqWv)), this system seamlessly integrates reservation management with smart lighting control, enhancing operational efficiency and user experience.
+This project is an IoT solution for automating the lighting system of a high-traffic basketball court facility. Developed for a popular basketball hub in Colombo, Sri Lanka [CLC Basketball Court](https://g.co/kgs/cJUwqWv), this system seamlessly integrates reservation management with smart lighting control, enhancing operational efficiency and user experience.
 
 ## Key Features
 
