@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basketball Court Lights Control</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .log-container {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border: 1px solid #ccc;
+        height: 300px;
+        overflow-y: scroll;
+      }
+      .log {
+        white-space: pre-wrap;
+        font-family: monospace;
+      }
+      .buttons {
+        margin-top: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Basketball Court Lights Control</h1>
+    <div class="log-container">
+      <div id="log" class="log">
+        {% if log %} {{ log }} {% else %} No logs available. {% endif %}
+      </div>
+    </div>
+    <div class="buttons">
+      <button onclick="restartScript()">Restart Script</button>
+    </div>
+
+    <script>
+      function restartScript() {
+        fetch("/restart").then((response) => {
+          if (response.ok) {
+            console.log("Script restarted successfully");
+            setTimeout(updateLogs, 1000); // Update logs after a short delay
+          } else {
+            console.error("Failed to restart script");
+          }
+        });
+      }
+
+      function updateLogs() {
+        fetch("/get_logs")
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("log").textContent = data.log;
+          });
+      }
+
+      // Update logs every 5 seconds
+      setInterval(updateLogs, 5000);
+    </script>
+  </body>
+</html>
