@@ -72,10 +72,10 @@ Replace the placeholder values with your actual device and API configurations
 
 b. If you don't have smart devices:
 
-You can use the mock setup included in the project
+You can use the mock setup included in the project.
 Create a .env file and set:
 ```
-CopyIS_PRODUCTION=false
+IS_PRODUCTION=false
 API_URL=https://your-api-endpoint.com
 ```
 
